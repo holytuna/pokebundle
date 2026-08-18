@@ -15,7 +15,6 @@ export async function fetchPokemon(pokemonName: string) {
   const pokemonSpeciesRes = await fetch(
     `${process.env.NEXT_PUBLIC_POKEMON_API_URL}/pokemon-species/${pokemonName}`,
   );
-  // console.log(pokemonRes)
   const pokemonSpeciesData = await pokemonSpeciesRes.json();
   const pokemonVarietiesLength = pokemonSpeciesData.varieties.length;
   const pokemonVariety = pokemonSpeciesData.varieties[Math.floor(Math.random() * pokemonVarietiesLength)].pokemon.name;
